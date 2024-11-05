@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Interfaces\BoardingHouseRepositoryInterface;
 use App\Models\BoardingHouse;
-use Filament\Forms\Components\Builder;
+use illuminate\Database\Eloquent\Builder;
 
 class BoardingHouseRepository implements BoardingHouseRepositoryInterface
 {
@@ -31,8 +31,10 @@ class BoardingHouseRepository implements BoardingHouseRepositoryInterface
     }
 
     public function getPopularBoardingHouses($limit = 5)
+
     {
-        return BoardingHouse::withCount('transactions')->orderBy('Transactions_count', 'desc')->take($limit)->get();
+
+        return BoardingHouse::withCount('transactions')->orderBy('transactions_count', 'desc')->take($limit)->get();
     }
 
     public function getBoardingHouseByCitySlug($slug)
