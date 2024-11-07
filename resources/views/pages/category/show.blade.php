@@ -23,6 +23,7 @@
     </button>
 </div>
 @foreach ($boardingHouses as $boardingHouse)
+<section id="Result" class=" relative flex flex-col gap-4 px-5 mt-5 mb-9">
 <a href="details.html" class="card">
     <div
         class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
@@ -47,8 +48,6 @@
         </div>
     </div>
 </a>
-<section id="Result" class=" relative flex flex-col gap-4 px-5 mt-5 mb-9">
-
 </section>
 @endforeach
 
